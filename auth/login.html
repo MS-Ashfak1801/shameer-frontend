@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>CMS Login</title>
+
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: linear-gradient(135deg, #0f172a, #1e293b);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* ===== LOGIN BOX ===== */
+    .login-container {
+      width: 360px;
+      background: #ffffff;
+      padding: 35px 30px;
+      border-radius: 14px;
+      box-shadow: 0 20px 45px rgba(0,0,0,0.25);
+      text-align: center;
+      animation: fadeUp 0.6s ease;
+    }
+
+    .login-container h2 {
+      margin-bottom: 25px;
+      color: #0f172a;
+      font-size: 22px;
+      font-weight: 600;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      margin: 12px 0;
+      font-size: 14px;
+      border-radius: 6px;
+      border: 1px solid #cbd5e1;
+      outline: none;
+    }
+
+    input:focus {
+      border-color: #2563eb;
+      box-shadow: 0 0 0 2px rgba(37,99,235,0.15);
+    }
+
+    /* ===== BUTTON ===== */
+    button {
+      width: 100%;
+      padding: 12px;
+      margin-top: 18px;
+      background: linear-gradient(90deg, #0f172a, #1e293b);
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 15px;
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+
+    button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    }
+
+    /* ===== FORGOT ===== */
+    .forgot {
+      margin-top: 16px;
+      font-size: 14px;
+    }
+
+    .forgot a {
+      color: #2563eb;
+      text-decoration: none;
+    }
+
+    .forgot a:hover {
+      text-decoration: underline;
+    }
+
+    /* ===== MESSAGE ===== */
+    #msg {
+      margin-top: 15px;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    /* ===== ANIMATION ===== */
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="login-container">
+    <h2>College Management System</h2>
+
+    <input type="email" id="email" placeholder="Email" />
+    <input type="password" id="password" placeholder="Password" />
+
+    <button id="loginBtn">Login</button>
+
+    <p class="forgot">
+      <a href="../auth/reset-password.html">Forgot Password?</a>
+    </p>
+
+    <p id="msg"></p>
+  </div>
+
+  <!-- SAME LOGIC -->
+  <script src="../js/auth.js"></script>
+</body>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>My Courses</title>
+
+<style>
+body{
+  margin:0;
+  font-family:"Segoe UI",Arial,sans-serif;
+  background:#eef2f7;
+  display:flex;
+}
+
+/* ===== SIDEBAR ===== */
+.sidebar{
+  width:220px;
+  background:#0f172a;
+  color:#fff;
+  min-height:100vh;
+  padding:20px 15px;
+}
+
+.sidebar h2{
+  text-align:center;
+  margin:0 0 6px;
+  font-size:18px;
+}
+.sidebar p{
+  text-align:center;
+  font-size:12px;
+  color:#cbd5f5;
+  margin:0 0 20px;
+}
+
+.sidebar a{
+  display:block;
+  padding:10px 12px;
+  margin-bottom:6px;
+  color:#cbd5f5;
+  text-decoration:none;
+  border-radius:6px;
+  font-size:14px;
+  font-weight:600;
+}
+
+.sidebar a.active,
+.sidebar a:hover{
+  background:#1e293b;
+  color:#fff;
+}
+
+/* ===== MAIN ===== */
+.main{
+  flex:1;
+  padding:40px 30px;
+}
+
+/* ===== TITLE ===== */
+.title-box{
+  text-align:center;
+  margin-bottom:30px;
+}
+
+.title-box h2{
+  margin:0;
+  font-size:24px;
+  color:#0f172a;
+}
+
+.title-box .sub{
+  color:#64748b;
+  margin-top:4px;
+}
+
+.student-info{
+  margin-top:10px;
+  display:flex;
+  justify-content:center;
+  gap:30px;
+  color:#475569;
+  font-size:14px;
+}
+
+/* ===== LIST BOX ===== */
+.list-box{
+  background:white;
+  padding:25px;
+  border-radius:12px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.08);
+  width:70%;
+  margin:auto;
+}
+
+.list-box ul{
+  list-style:none;
+  padding:0;
+  margin:0;
+}
+
+.list-box li{
+  padding:14px 16px;
+  border-bottom:1px solid #e5e7eb;
+  font-size:15px;
+  color:#0f172a;
+}
+
+.list-box li:last-child{
+  border-bottom:none;
+}
+</style>
+</head>
+
+<body>
+
+<!-- ===== SIDEBAR ===== -->
+<div class="sidebar">
+  <h2>CMS</h2>
+  <p>Student Portal</p>
+
+  <a href="../dashboard/student-dashboard.html">Dashboard</a>
+  <a href="attendance.html">Attendance</a>
+  <a href="marks.html">Marks</a>
+  <a href="courses.html" class="active">Courses</a>
+  <a href="fees.html">Fees</a>
+  <a id="logout">Logout</a>
+</div>
+
+<!-- ===== MAIN CONTENT ===== -->
+<div class="main">
+
+  <div class="title-box">
+    <h2>My Courses</h2>
+    <p class="sub">Enrolled course list</p>
+
+    
+  <div class="list-box">
+    <ul id="courseList">
+      <!-- JS inserts courses -->
+    </ul>
+  </div>
+
+</div>
+
+<!-- EXISTING COURSES JS -->
+<script src="../js/courses.js"></script>
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CMS Admin Dashboard</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<style>
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:"Segoe UI",Arial,sans-serif;
+  background:#eef2f7;
+  display:flex;
+}
+
+/* ===== SIDEBAR ===== */
+.sidebar{
+  width:220px;
+  background:#0f172a;
+  color:#fff;
+  min-height:100vh;
+  padding:20px 15px;
+}
+.sidebar h2{
+  text-align:center;
+  margin-bottom:25px;
+}
+.sidebar a{
+  display:block;
+  padding:10px 14px;
+  margin-bottom:6px;
+  color:#cbd5f5;
+  text-decoration:none;
+  border-radius:8px;
+  font-size:14px;
+  font-weight:600;
+}
+.sidebar a:hover,
+.sidebar a.active{
+  background:#1e293b;
+  color:#fff;
+}
+
+/* ===== MAIN ===== */
+.main{
+  flex:1;
+  padding:40px;
+}
+
+/* ===== DASHBOARD WRAPPER ===== */
+.dashboard{
+  max-width:1050px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  grid-template-rows:auto auto auto;
+  gap:30px;
+  align-items:center;
+}
+
+/* ===== CARD ===== */
+.card{
+  background:#fff;
+  border-radius:18px;
+  padding:18px;
+  box-shadow:0 10px 25px rgba(0,0,0,.12);
+  text-align:center;
+}
+.card h3{
+  margin:0 0 12px;
+  font-size:15px;
+  font-weight:700;
+  color:#0f172a;
+}
+
+/* ===== TOTAL CENTER ===== */
+.total-card{
+  grid-column:2;
+  grid-row:2;
+  width:240px;
+  height:240px;
+  border-radius:50%;
+  margin:auto;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  box-shadow:0 14px 35px rgba(37,99,235,.35);
+}
+.total-number{
+  font-size:48px;
+  font-weight:900;
+  color:#2563eb;
+}
+
+/* ===== POSITIONS ===== */
+.top{grid-column:2;grid-row:1;}
+.left{grid-column:1;grid-row:2;}
+.right{grid-column:3;grid-row:2;}
+.bottom{grid-column:2;grid-row:3;}
+
+/* ===== CANVAS ===== */
+canvas{
+  width:100% !important;
+  height:180px !important;
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:1100px){
+  .dashboard{
+    grid-template-columns:1fr;
+  }
+  .top,.left,.right,.bottom,.total-card{
+    grid-column:1 !important;
+    grid-row:auto !important;
+  }
+  .total-card{
+    margin:30px auto;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="sidebar">
+  <h2>CMS Admin</h2>
+
+  <a href="admin-dashboard.html" class="active">Dashboard</a>
+
+  <a href="admin-students.html">Students List</a>
+  <a href="register-student.html">Register Student</a>
+
+  <hr style="border:0;border-top:1px solid #1e293b;margin:12px 0;">
+
+  <a href="add-marks.html">Marks</a>
+  <a href="add-attendance.html">Attendance</a>
+  <a href="add-fees.html">Fees</a>
+  <a href="admin-pay-fees.html">Pay Fees</a>
+  <a href="add-courses.html">Courses</a>
+
+  <hr style="border:0;border-top:1px solid #1e293b;margin:12px 0;">
+
+  <a href="../auth/login.html" onclick="logout()">Logout</a>
+</div>
+
+<!-- MAIN -->
+<div class="main">
+
+<div class="dashboard">
+
+  <!-- TOP -->
+  <div class="card top">
+    <h3>Students by Department</h3>
+    <canvas id="studentChart"></canvas>
+  </div>
+
+  <!-- LEFT -->
+  <div class="card left">
+    <h3>Attendance %</h3>
+    <canvas id="attendanceChart"></canvas>
+  </div>
+
+  <!-- CENTER -->
+  <div class="card total-card">
+    <h3>Total Students</h3>
+    <div id="totalStudents" class="total-number">--</div>
+  </div>
+
+  <!-- RIGHT -->
+  <div class="card right">
+    <h3>Pass vs Fail</h3>
+    <canvas id="passFailChart"></canvas>
+  </div>
+
+  <!-- BOTTOM -->
+  <div class="card bottom">
+    <h3>Fees Status</h3>
+    <canvas id="feesChart"></canvas>
+  </div>
+
+</div>
+</div>
+
+<script src="../js/admin-dashboard.js"></script>
+
+</body>
+</html>

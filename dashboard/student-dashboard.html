@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Student Dashboard</title>
+
+<style>
+body{
+  margin:0;
+  font-family:"Segoe UI",Arial,sans-serif;
+  background:#eef2f7;
+  display:flex;
+}
+.sidebar{
+  width:220px;
+  background:#0f172a;
+  color:#fff;
+  min-height:100vh;
+  padding:20px 15px;
+}
+.sidebar h2{text-align:center;margin:0 0 6px;}
+.sidebar p{text-align:center;font-size:12px;color:#cbd5f5;margin-bottom:20px;}
+.sidebar a{
+  display:block;padding:10px 12px;margin-bottom:6px;
+  color:#cbd5f5;text-decoration:none;border-radius:6px;font-weight:600;
+}
+.sidebar a:hover,.sidebar a.active{background:#1e293b;color:#fff;}
+
+.main{flex:1;padding:40px 30px;}
+
+.cards{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:25px;
+  max-width:900px;
+  margin:auto;
+}
+.card{
+  background:#fff;
+  border-radius:14px;
+  padding:22px;
+  box-shadow:0 10px 25px rgba(0,0,0,.08);
+  position:relative;
+}
+.accent{
+  position:absolute;left:0;top:0;width:6px;height:100%;
+}
+.att{background:#38bdf8}
+.mar{background:#22c55e}
+.fee{background:#ef4444}
+.value{font-size:30px;margin-top:10px}
+.note{color:#dc2626;font-weight:600}
+</style>
+</head>
+
+<body>
+
+<div class="sidebar">
+  <h2>CMS</h2>
+  <p>Student Portal</p>
+
+  <a class="active">Dashboard</a>
+  <a href="../modules/attendance.html">Attendance</a>
+  <a href="../modules/marks.html">Marks</a>
+  <a href="../modules/courses.html">Courses</a>
+  <a href="../modules/fees.html">Fees</a>
+  <a href="#" id="logout">Logout</a>
+</div>
+
+<div class="main">
+
+  <h2 style="text-align:center">Dashboard</h2>
+
+  <div style="text-align:center;margin-bottom:30px">
+    <b>Name:</b> <span id="stuName">-</span> |
+    <b>Reg No:</b> <span id="stuReg">-</span> |
+    <b>Sem:</b> <span id="stuSem">-</span>
+  </div>
+
+  <section class="cards">
+
+    <div class="card">
+      <span class="accent att"></span>
+      Attendance
+      <div id="attVal" class="value">--%</div>
+    </div>
+
+    <div class="card">
+      <span class="accent mar"></span>
+      Marks
+      <div id="marksVal" class="value">--%</div>
+    </div>
+
+    <div class="card">
+      <span class="accent fee"></span>
+      Fees
+      <div id="feesVal" class="value">₹--</div>
+      <div id="feesNote" class="note">--</div>
+    </div>
+
+  </section>
+
+</div>
+
+<script src="../js/dashboard.js"></script>
+</body>
+</html>

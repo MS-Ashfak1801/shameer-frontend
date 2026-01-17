@@ -1,0 +1,276 @@
+/* ======================
+   GLOBAL
+====================== */
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+
+  /* 🌑 DARK BUT SOFT BACKGROUND */
+  background: #e9edf3;   /* darker than white, not black */
+  color: #0f172a;
+}
+
+/* ======================
+   TOP BAR (UNCHANGED)
+====================== */
+.topbar {
+  height: 72px;
+  background: #0f172a;
+  padding: 0 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.logo-box {
+  width: 42px;
+  height: 42px;
+  background: linear-gradient(135deg, #38bdf8, #6366f1);
+  color: white;
+  font-weight: 700;
+  border-radius: 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.title h1 {
+  margin: 0;
+  font-size: 17px;
+  color: #f8fafc;
+}
+
+.title p {
+  margin: 0;
+  font-size: 12px;
+  color: #cbd5f5;
+}
+
+/* NAV */
+.nav a {
+  margin-left: 26px;
+  text-decoration: none;
+  color: #cbd5f5;
+  font-size: 15px;
+  font-weight: 500;
+  position: relative;
+}
+
+.nav a:hover,
+.nav a.active {
+  color: #ffffff;
+}
+
+.nav a.active::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, #38bdf8, #6366f1);
+  border-radius: 2px;
+}
+
+/* ======================
+   MAIN
+====================== */
+.main {
+  padding: 70px 40px;
+  text-align: center;
+}
+
+.main h2 {
+  margin: 0;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.sub {
+  margin-top: 6px;
+  color: #475569;
+  font-size: 15px;
+}
+
+/* ======================
+   CARDS
+====================== */
+.cards {
+  margin-top: 70px;
+  display: flex;
+  justify-content: center;
+  gap: 45px;
+}
+
+.card {
+  width: 270px;
+  padding: 42px 26px;
+  background: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 16px 35px rgba(0,0,0,0.1);
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 26px 55px rgba(0,0,0,0.15);
+}
+
+/* MULTI COLOR STRIP */
+.card .accent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  border-radius: 18px 18px 0 0;
+}
+
+/* TEXT */
+.label {
+  margin: 0;
+  font-size: 14px;
+  color: #475569;
+  font-weight: 600;
+}
+
+.value {
+  margin-top: 20px;
+  font-size: 36px;
+  font-weight: 700;
+}
+
+.note {
+  font-size: 14px;
+  color: #dc2626;
+  font-weight: 600;
+}
+
+/* ACCENT COLORS */
+.attendance .accent {
+  background: #22c55e;
+}
+
+.marks .accent {
+  background: #3b82f6;
+}
+
+.fees .accent {
+  background: #f59e0b;
+}
+
+/* ======================
+   RESPONSIVE
+====================== */
+@media (max-width: 900px) {
+  .cards {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+}
+/* ======================
+   TABLE STYLE (ATTENDANCE)
+====================== */
+.table-box {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+table {
+  width: 75%;
+  background: #ffffff;
+  border-collapse: collapse;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 16px 35px rgba(0,0,0,0.1);
+}
+
+thead {
+  background: #0f172a;
+  color: #ffffff;
+}
+
+th, td {
+  padding: 14px 16px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+tbody tr:nth-child(even) {
+  background: #f8fafc;
+}
+
+tbody tr:hover {
+  background: #eef2ff;
+}
+
+/* LOW ATTENDANCE */
+.low {
+  color: #dc2626;
+  font-weight: 700;
+}
+/* FEES STATUS COLORS */
+.paid {
+  color: #16a34a;
+  font-weight: 700;
+}
+
+.due {
+  color: #dc2626;
+  font-weight: 700;
+}
+/* ======================
+   ADMIN FORMS
+====================== */
+.form-box {
+  width: 420px;
+  margin: 40px auto;
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.form-box h3 {
+  margin-top: 0;
+  text-align: center;
+}
+
+.form-box input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  font-size: 14px;
+}
+
+.form-box button {
+  width: 100%;
+  padding: 10px;
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.form-box button:hover {
+  background: #1e40af;
+}
+
+.msg {
+  text-align: center;
+  margin-top: 10px;
+  font-weight: bold;
+}

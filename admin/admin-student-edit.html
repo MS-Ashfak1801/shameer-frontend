@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Edit Student</title>
+
+<style>
+body{
+  margin:0;
+  font-family:Segoe UI, Arial, sans-serif;
+  background:#eef2f7;
+  display:flex;
+}
+
+/* SIDEBAR */
+.sidebar{
+  width:220px;
+  background:#0f172a;
+  color:#fff;
+  min-height:100vh;
+  padding:20px 15px;
+}
+.sidebar h2{
+  text-align:center;
+  margin:0 0 25px;
+}
+.sidebar a{
+  display:block;
+  padding:10px 12px;
+  margin-bottom:6px;
+  color:#cbd5f5;
+  text-decoration:none;
+  border-radius:6px;
+  font-size:14px;
+  font-weight:600;
+}
+.sidebar a:hover,
+.sidebar a.active{
+  background:#1e293b;
+  color:#fff;
+}
+
+/* MAIN */
+.main{
+  flex:1;
+  padding:35px 30px;
+}
+
+.card{
+  max-width:600px;
+  margin:auto;
+  background:#fff;
+  padding:25px;
+  border-radius:12px;
+  box-shadow:0 10px 25px rgba(0,0,0,.12);
+}
+
+h2{text-align:center;margin-top:0;}
+
+label{
+  display:block;
+  margin-top:15px;
+  font-weight:600;
+}
+
+input{
+  width:100%;
+  padding:8px;
+  margin-top:6px;
+  border-radius:6px;
+  border:1px solid #cbd5e1;
+}
+
+button{
+  margin-top:20px;
+  width:100%;
+  padding:10px;
+  background:#16a34a;
+  color:#fff;
+  border:none;
+  border-radius:6px;
+  font-size:15px;
+  cursor:pointer;
+}
+button:hover{opacity:.9;}
+
+#msg{
+  margin-top:10px;
+  text-align:center;
+  font-weight:600;
+}
+</style>
+</head>
+
+<body>
+
+<!-- SIDEBAR -->
+<div class="sidebar">
+  <h2>CMS Admin</h2>
+  <a href="admin-dashboard.html">Dashboard</a>
+  <a href="admin-students.html" class="active">Students</a>
+  <a href="add-marks.html">Marks</a>
+  <a href="add-attendance.html">Attendance</a>
+  <a href="add-fees.html">Fees</a>
+  <a href="../auth/login.html" onclick="logout()">Logout</a>
+</div>
+
+<!-- MAIN -->
+<div class="main">
+  <div class="card">
+    <h2>Edit Student</h2>
+
+    <label>Name</label>
+    <input type="text" id="name">
+
+    <label>Department</label>
+    <input type="text" id="department">
+
+    <label>Year</label>
+    <input type="text" id="year">
+
+    <label>Semester</label>
+    <input type="number" id="semester">
+
+    <label>Phone</label>
+    <input type="text" id="phone">
+
+    <button id="updateBtn">Update Student</button>
+
+    <div id="msg"></div>
+  </div>
+</div>
+
+
+<script src="../js/admin-student-edit.js"></script>
+
+</body>
+</html>

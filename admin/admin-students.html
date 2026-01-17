@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Admin – Students</title>
+
+<style>
+body{
+  margin:0;
+  font-family:Segoe UI, Arial, sans-serif;
+  background:#eef2f7;
+  display:flex;
+}
+
+/* ===== SIDEBAR ===== */
+.sidebar{
+  width:220px;
+  background:#0f172a;
+  color:#fff;
+  min-height:100vh;
+  padding:20px 15px;
+  box-sizing:border-box;
+}
+.sidebar h2{
+  text-align:center;
+  margin:0 0 25px;
+  font-size:18px;
+}
+.sidebar a{
+  display:block;
+  padding:10px 12px;
+  margin-bottom:6px;
+  color:#cbd5f5;
+  text-decoration:none;
+  border-radius:6px;
+  font-size:14px;
+  font-weight:600;
+}
+.sidebar a:hover,
+.sidebar a.active{
+  background:#1e293b;
+  color:#fff;
+}
+.sidebar hr{
+  border:none;
+  border-top:1px solid #1e293b;
+  margin:15px 0;
+}
+
+/* ===== MAIN ===== */
+.main{
+  flex:1;
+  padding:35px 30px;
+}
+
+h2{ margin:0; color:#0f172a; }
+.sub{ color:#64748b; margin-bottom:15px; }
+
+/* ===== CONTROLS ===== */
+.controls{
+  display:flex;
+  gap:15px;
+  margin-bottom:20px;
+}
+.controls input,
+.controls select{
+  padding:8px 10px;
+  border-radius:6px;
+  border:1px solid #cbd5e1;
+  font-size:14px;
+}
+
+/* ===== TABLE ===== */
+.card{
+  background:#fff;
+  padding:20px;
+  border-radius:12px;
+  box-shadow:0 10px 25px rgba(0,0,0,.12);
+}
+table{
+  width:100%;
+  border-collapse:collapse;
+}
+thead{
+  background:#0f172a;
+  color:#fff;
+}
+th,td{
+  padding:10px 12px;
+  font-size:14px;
+  border-bottom:1px solid #e5e7eb;
+  text-align:center;
+}
+.action-btn{
+  padding:5px 10px;
+  font-size:13px;
+  border:none;
+  border-radius:5px;
+  cursor:pointer;
+}
+.view{ background:#2563eb; color:#fff; }
+.edit{ background:#16a34a; color:#fff; }
+.delete{ background:#dc2626; color:#fff; }
+.action-btn:hover{ opacity:.85; }
+</style>
+</head>
+
+<body>
+
+<!-- ===== SIDEBAR ===== -->
+<div class="sidebar">
+  <h2>CMS Admin</h2>
+
+  <a href="admin-dashboard.html">Dashboard</a>
+  <a href="admin-students.html" class="active">Students List</a>
+  <a href="register-student.html">Register Student</a>
+
+  <hr>
+
+  <a href="add-marks.html">Marks</a>
+  <a href="add-attendance.html">Attendance</a>
+  <a href="add-fees.html">Fees</a>
+  <a href="admin-pay-fees.html">Pay Fees</a>
+
+  <hr>
+
+  <a href="../auth/login.html" onclick="logout()">Logout</a>
+</div>
+
+<!-- ===== MAIN ===== -->
+<div class="main">
+  <h2>Students</h2>
+  <p class="sub">Registered students list</p>
+
+  <!-- 🔍 SEARCH + FILTER -->
+  <div class="controls">
+    <input type="text" id="searchInput" placeholder="Search Reg No / Name">
+    <select id="deptFilter">
+      <option value="">All Departments</option>
+    </select>
+  </div>
+
+  <div class="card">
+    <table>
+      <thead>
+        <tr>
+          <th>Reg No</th>
+          <th>Name</th>
+          <th>Department</th>
+          <th>Semester</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="studentTable"></tbody>
+    </table>
+  </div>
+</div>
+
+<script src="../js/admin-students.js"></script>
+</body>
+</html>
